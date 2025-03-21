@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -24,22 +23,22 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import UserProfile from '@/components/UserProfile';
+import UserProfile, { UserData } from '@/components/UserProfile';
 import WaitingList, { WaitingListEntry } from '@/components/WaitingList';
 import { Calendar, Clock, X, User, Calendar as CalendarIcon, Info } from 'lucide-react';
 
 // Sample user data
-const sampleUser = {
+const sampleUser: UserData = {
   id: 'p1',
   name: 'Player User',
   email: 'player@example.com',
-  role: 'player' as const,
+  role: 'player',
   bookings: 5,
   memberSince: '2023-01-15',
   paymentMethods: [
     {
       id: 'pm1',
-      type: 'card' as const,
+      type: 'card',
       last4: '4242',
       expiryDate: '12/24',
       isDefault: true
@@ -58,8 +57,8 @@ const sampleBookings = [
     startTime: '18:00',
     endTime: '20:00',
     price: 30,
-    status: 'upcoming' as const,
-    paymentStatus: 'paid' as const,
+    status: 'upcoming',
+    paymentStatus: 'paid',
     bookingReference: 'BKNG12345',
     canCancel: true,
   },
@@ -72,8 +71,8 @@ const sampleBookings = [
     startTime: '14:00',
     endTime: '16:00',
     price: 20,
-    status: 'upcoming' as const,
-    paymentStatus: 'paid' as const,
+    status: 'upcoming',
+    paymentStatus: 'paid',
     bookingReference: 'BKNG12346',
     canCancel: false,
   },
@@ -86,8 +85,8 @@ const sampleBookings = [
     startTime: '10:00',
     endTime: '12:00',
     price: 15,
-    status: 'completed' as const,
-    paymentStatus: 'paid' as const,
+    status: 'completed',
+    paymentStatus: 'paid',
     bookingReference: 'BKNG12340',
     canCancel: false,
   },
@@ -100,8 +99,8 @@ const sampleBookings = [
     startTime: '16:00',
     endTime: '18:00',
     price: 30,
-    status: 'cancelled' as const,
-    paymentStatus: 'refunded' as const,
+    status: 'cancelled',
+    paymentStatus: 'refunded',
     bookingReference: 'BKNG12335',
     canCancel: false,
   }
@@ -141,7 +140,7 @@ const sampleWaitingList: WaitingListEntry[] = [
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(sampleUser);
+  const [user, setUser] = useState<UserData>(sampleUser);
   const [bookings, setBookings] = useState(sampleBookings);
   const [waitingList, setWaitingList] = useState(sampleWaitingList);
   const [activeBookingId, setActiveBookingId] = useState<string | null>(null);
