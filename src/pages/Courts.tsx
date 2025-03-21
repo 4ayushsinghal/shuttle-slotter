@@ -208,7 +208,7 @@ const Courts: React.FC = () => {
                       <SelectValue placeholder="All Types" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Types</SelectItem>
+                      <SelectItem value="all">All Types</SelectItem>
                       <SelectItem value="Indoor">Indoor</SelectItem>
                       <SelectItem value="Outdoor">Outdoor</SelectItem>
                     </SelectContent>
@@ -223,7 +223,7 @@ const Courts: React.FC = () => {
                     <SelectValue placeholder="Default" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Default</SelectItem>
+                    <SelectItem value="default">Default</SelectItem>
                     <SelectItem value="price-asc">Price: Low to High</SelectItem>
                     <SelectItem value="price-desc">Price: High to Low</SelectItem>
                     <SelectItem value="availability">Availability</SelectItem>
@@ -243,7 +243,7 @@ const Courts: React.FC = () => {
                         <SelectValue placeholder="All Types" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Types</SelectItem>
+                        <SelectItem value="all">All Types</SelectItem>
                         <SelectItem value="Indoor">Indoor</SelectItem>
                         <SelectItem value="Outdoor">Outdoor</SelectItem>
                       </SelectContent>
@@ -259,7 +259,7 @@ const Courts: React.FC = () => {
                         <SelectValue placeholder="Default" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Default</SelectItem>
+                        <SelectItem value="default">Default</SelectItem>
                         <SelectItem value="price-asc">Price: Low to High</SelectItem>
                         <SelectItem value="price-desc">Price: High to Low</SelectItem>
                         <SelectItem value="availability">Availability</SelectItem>
