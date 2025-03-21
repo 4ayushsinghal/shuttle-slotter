@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 export interface Court {
   id: string;
@@ -29,18 +30,26 @@ const CourtCard: React.FC<CourtCardProps> = ({ court }) => {
     navigate(`/booking/${court.id}`);
   };
 
+  // Add fallback image handling
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80';
+  };
+
   return (
     <div className="relative group overflow-hidden rounded-xl hover-card transition-all duration-300 h-full">
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-70 group-hover:opacity-80 transition-opacity"></div>
       
-      {/* Court image */}
+      {/* Court image with aspect ratio and error handling */}
       <div className="relative w-full h-[300px] overflow-hidden">
-        <img 
-          src={court.image} 
-          alt={court.name} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        <AspectRatio ratio={16/9} className="h-full">
+          <img 
+            src={court.image} 
+            alt={court.name} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={handleImageError}
+          />
+        </AspectRatio>
       </div>
 
       {/* Availability badge */}

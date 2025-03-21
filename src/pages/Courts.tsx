@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
-// Sample courts data
+// Sample courts data with verified image URLs
 const sampleCourts: Court[] = [
   {
     id: '1',
