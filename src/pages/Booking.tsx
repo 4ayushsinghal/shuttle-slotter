@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -383,8 +382,9 @@ const Booking: React.FC = () => {
                 <>
                   <h2 className="text-2xl font-semibold mb-6">Select Date & Time</h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <Card className="md:col-span-1">
+                  {/* Fixed layout - Adjust the grid to prevent overlap */}
+                  <div className="grid grid-cols-1 gap-6 mb-8">
+                    <Card>
                       <CardHeader>
                         <CardTitle className="text-lg">Select Date</CardTitle>
                         <CardDescription>Choose your preferred date</CardDescription>
@@ -404,7 +404,7 @@ const Booking: React.FC = () => {
                       </CardContent>
                     </Card>
                     
-                    <Card className="md:col-span-2">
+                    <Card>
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center justify-between">
                           <span>Available Time Slots</span>
